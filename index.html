@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Anshul Jain | AI & Big Data Innovator</title>
+    <title>Anshul Jain | Patented AI & Big Data Architect</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -84,9 +84,9 @@
                 </div>
                 <!-- LinkedIn Badge END -->
                 <div class="text-center md:text-left">
-                    <h2 class="text-4xl font-bold text-gray-800">Experienced Product Development Lead</h2>
+                    <h2 class="text-4xl font-bold text-gray-800">Architect of Resilient & Intelligent Data Systems</h2>
                     <p class="mt-4 text-lg text-gray-600">
-                        As an Experienced Product Development Lead with a demonstrated history in IT, I specialize in Software Architecture, GenAI applications (RAG & AI Agents), and Big Data solutions. My passion is to continuously learn and leverage technology like AI and cloud computing to design elegant, powerful solutions for complex problems in the Telecom, Insurance, and Financial domains.
+                        As a <strong class="text-indigo-600">patented inventor</strong> and solutions architect with over a decade of experience, I don't just build software—I engineer the future of data. From designing fault-tolerant streaming architectures for global financial institutions to pioneering Generative AI applications, my focus is on creating systems that are not only powerful and scalable but also exceptionally reliable. My passion lies in transforming complex challenges into elegant, impactful solutions.
                     </p>
                 </div>
             </div>
@@ -125,12 +125,17 @@
 
                 <!-- Projects Tab -->
                 <div id="projects" class="tab-content active space-y-4">
+                    <div class="p-4 bg-gray-50 rounded-lg hover:bg-indigo-50 transition">
+                        <h4 class="font-bold text-gray-800">U.S. Patent: Streaming Architecture for Improved Fault Tolerance</h4>
+                        <p class="text-sm text-gray-600">Co-inventor of a patented system for Bank of America (US 12,261,755 B1) for reliable, real-time data streaming and quality monitoring.</p>
+                        <a href="https://ppubs.uspto.gov/api/pdf/downloadPdf/12261755" target="_blank" class="text-sm font-semibold text-indigo-600 hover:underline">View Patent <i class="fas fa-external-link-alt ml-1"></i></a>
+                    </div>
                      <div class="p-4 bg-gray-50 rounded-lg hover:bg-indigo-50 transition">
                         <h4 class="font-bold text-gray-800">Generic RAG Accelerator Framework</h4>
                         <p class="text-sm text-gray-600">High-throughput framework using Python/LlamaIndex for building personalized chatbots.</p>
                     </div>
                     <div class="p-4 bg-gray-50 rounded-lg hover:bg-indigo-50 transition">
-                        <h4 class="font-bold text-gray-800">Strategic Financial Data Platform (for Bank of America)</h4>
+                        <h4 class="font-bold text-gray-800">Strategic Financial Data Platform</h4>
                         <p class="text-sm text-gray-600">Data ingestion app with configurable pipelines and zero-downtime deployments.</p>
                     </div>
                     <div class="p-4 bg-gray-50 rounded-lg hover:bg-indigo-50 transition">
@@ -138,16 +143,12 @@
                         <p class="text-sm text-gray-600">Scalable data warehouse using Apache Carbon/Spark for high-performance querying.</p>
                     </div>
                     <div class="p-4 bg-gray-50 rounded-lg hover:bg-indigo-50 transition">
-                        <h4 class="font-bold text-gray-800">Network Performance Monitoring GUI (for British Telecom)</h4>
+                        <h4 class="font-bold text-gray-800">Network Performance Monitoring GUI</h4>
                         <p class="text-sm text-gray-600">Led development of a web GUI using Java & Spark for network data analytics.</p>
                     </div>
                     <div class="p-4 bg-gray-50 rounded-lg hover:bg-indigo-50 transition">
-                        <h4 class="font-bold text-gray-800">Sentiment Analysis REST Service (for AAA)</h4>
+                        <h4 class="font-bold text-gray-800">Sentiment Analysis REST Service</h4>
                         <p class="text-sm text-gray-600">Java Spring Boot app to analyze sentiment from customer call transcripts.</p>
-                    </div>
-                    <div class="p-4 bg-gray-50 rounded-lg hover:bg-indigo-50 transition">
-                        <h4 class="font-bold text-gray-800">GrowFitter E-commerce Website (Co-Founder)</h4>
-                        <p class="text-sm text-gray-600">Developed an e-commerce platform using OpenCart for online gym membership sales.</p>
                     </div>
                 </div>
 
@@ -225,7 +226,6 @@
 
         const setupCanvas = () => {
             canvas.width = window.innerWidth;
-            // Set canvas height to the full scrollable height of the page
             canvas.height = document.body.scrollHeight;
         }
 
@@ -241,10 +241,9 @@
         }
         
         const draw = () => {
-            // Use a semi-transparent background to create the fading trail effect
-            ctx.fillStyle = 'rgba(243, 244, 246, 0.05)'; // Corresponds to bg-gray-100
+            ctx.fillStyle = 'rgba(243, 244, 246, 0.05)';
             ctx.fillRect(0, 0, canvas.width, canvas.height);
-            ctx.fillStyle = '#6366f1'; // A mild indigo color for the text
+            ctx.fillStyle = '#6366f1';
             ctx.font = fontSize + 'px monospace';
             const binary = "01";
 
@@ -252,7 +251,6 @@
                 const text = binary.charAt(Math.floor(Math.random() * binary.length));
                 ctx.fillText(text, i * fontSize, rainDrops[i] * fontSize);
 
-                // Reset drop to the top randomly to make the rain effect continuous
                 if(rainDrops[i] * fontSize > canvas.height && Math.random() > 0.975) {
                     rainDrops[i] = 0;
                 }
@@ -265,7 +263,6 @@
             animationFrameId = window.requestAnimationFrame(animate);
         }
 
-        // Debounce resize handler to avoid performance issues
         let resizeTimer;
         window.addEventListener('resize', () => {
             clearTimeout(resizeTimer);
@@ -276,7 +273,6 @@
             }, 250);
         });
 
-        // Initial setup
         initializeRain();
         animate();
 
