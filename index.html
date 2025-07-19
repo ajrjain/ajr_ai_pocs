@@ -12,6 +12,16 @@
     <style>
         body {
             font-family: 'Poppins', sans-serif;
+            background-color: #f3f4f6; /* bg-gray-100 */
+        }
+        #binary-background {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            opacity: 0.07; /* Kept it very light */
         }
         .btn {
             transition: transform 0.2s ease, background-color 0.2s ease;
@@ -47,7 +57,9 @@
         }
     </style>
 </head>
-<body class="bg-gray-100 text-gray-800">
+<body class="text-gray-800">
+    
+    <canvas id="binary-background"></canvas>
 
     <!-- Navbar -->
     <nav class="bg-white/80 backdrop-blur-md sticky top-0 z-50 shadow-sm">
@@ -66,9 +78,11 @@
         <!-- Hero / About Me Section -->
         <section id="about" class="mb-16">
             <div class="flex flex-col md:flex-row items-center gap-10">
-                <div class="w-48 h-48 md:w-56 md:h-56 rounded-full overflow-hidden shadow-lg flex-shrink-0">
-                    <img src="https://i.ibb.co/6r1F4Wq/profile-pic.jpg" alt="Profile Picture of Anshul Jain" class="w-full h-full object-cover">
+                <!-- LinkedIn Badge START -->
+                <div class="flex-shrink-0 w-full md:w-auto flex justify-center">
+                    <div class="badge-base LI-profile-badge" data-locale="en_US" data-size="medium" data-theme="light" data-type="VERTICAL" data-vanity="anshuljain7" data-version="v1"><a class="badge-base__link LI-simple-link" href="https://in.linkedin.com/in/anshuljain7?trk=profile-badge">Anshul Jain</a></div>
                 </div>
+                <!-- LinkedIn Badge END -->
                 <div class="text-center md:text-left">
                     <h2 class="text-4xl font-bold text-gray-800">Experienced Product Development Lead</h2>
                     <p class="mt-4 text-lg text-gray-600">
@@ -111,7 +125,7 @@
 
                 <!-- Projects Tab -->
                 <div id="projects" class="tab-content active space-y-4">
-                    <div class="p-4 bg-gray-50 rounded-lg hover:bg-indigo-50 transition">
+                     <div class="p-4 bg-gray-50 rounded-lg hover:bg-indigo-50 transition">
                         <h4 class="font-bold text-gray-800">Generic RAG Accelerator Framework</h4>
                         <p class="text-sm text-gray-600">High-throughput framework using Python/LlamaIndex for building personalized chatbots.</p>
                     </div>
@@ -124,8 +138,16 @@
                         <p class="text-sm text-gray-600">Scalable data warehouse using Apache Carbon/Spark for high-performance querying.</p>
                     </div>
                     <div class="p-4 bg-gray-50 rounded-lg hover:bg-indigo-50 transition">
+                        <h4 class="font-bold text-gray-800">Network Performance Monitoring GUI (for British Telecom)</h4>
+                        <p class="text-sm text-gray-600">Led development of a web GUI using Java & Spark for network data analytics.</p>
+                    </div>
+                    <div class="p-4 bg-gray-50 rounded-lg hover:bg-indigo-50 transition">
                         <h4 class="font-bold text-gray-800">Sentiment Analysis REST Service (for AAA)</h4>
                         <p class="text-sm text-gray-600">Java Spring Boot app to analyze sentiment from customer call transcripts.</p>
+                    </div>
+                    <div class="p-4 bg-gray-50 rounded-lg hover:bg-indigo-50 transition">
+                        <h4 class="font-bold text-gray-800">GrowFitter E-commerce Website (Co-Founder)</h4>
+                        <p class="text-sm text-gray-600">Developed an e-commerce platform using OpenCart for online gym membership sales.</p>
                     </div>
                 </div>
 
@@ -177,6 +199,9 @@
         </div>
     </footer>
 
+    <!-- LinkedIn Badge Script -->
+    <script src="https://platform.linkedin.com/badges/js/profile.js" async defer type="text/javascript"></script>
+
     <script>
         // Tab functionality
         function openTab(evt, tabName) {
@@ -192,6 +217,69 @@
             document.getElementById(tabName).classList.add('active');
             evt.currentTarget.classList.add('active');
         }
+
+        // Binary Rain Background Effect
+        const canvas = document.getElementById('binary-background');
+        const ctx = canvas.getContext('2d');
+        let animationFrameId;
+
+        const setupCanvas = () => {
+            canvas.width = window.innerWidth;
+            // Set canvas height to the full scrollable height of the page
+            canvas.height = document.body.scrollHeight;
+        }
+
+        const rainDrops = [];
+        const fontSize = 14;
+        
+        const initializeRain = () => {
+            setupCanvas();
+            const columns = canvas.width / fontSize;
+            for(let i=0; i < columns; i++) {
+                rainDrops[i] = 1;
+            }
+        }
+        
+        const draw = () => {
+            // Use a semi-transparent background to create the fading trail effect
+            ctx.fillStyle = 'rgba(243, 244, 246, 0.05)'; // Corresponds to bg-gray-100
+            ctx.fillRect(0, 0, canvas.width, canvas.height);
+            ctx.fillStyle = '#6366f1'; // A mild indigo color for the text
+            ctx.font = fontSize + 'px monospace';
+            const binary = "01";
+
+            for(let i=0; i < rainDrops.length; i++) {
+                const text = binary.charAt(Math.floor(Math.random() * binary.length));
+                ctx.fillText(text, i * fontSize, rainDrops[i] * fontSize);
+
+                // Reset drop to the top randomly to make the rain effect continuous
+                if(rainDrops[i] * fontSize > canvas.height && Math.random() > 0.975) {
+                    rainDrops[i] = 0;
+                }
+                rainDrops[i]++;
+            }
+        };
+        
+        const animate = () => {
+            draw();
+            animationFrameId = window.requestAnimationFrame(animate);
+        }
+
+        // Debounce resize handler to avoid performance issues
+        let resizeTimer;
+        window.addEventListener('resize', () => {
+            clearTimeout(resizeTimer);
+            resizeTimer = setTimeout(() => {
+                window.cancelAnimationFrame(animationFrameId);
+                initializeRain();
+                animate();
+            }, 250);
+        });
+
+        // Initial setup
+        initializeRain();
+        animate();
+
     </script>
 </body>
 </html>
