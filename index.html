@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Anshul Jain | AI & Big Data Innovator</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+        }
+        .btn {
+            transition: transform 0.2s ease, background-color 0.2s ease;
+        }
+        .btn:hover {
+            transform: translateY(-2px);
+        }
+        .card {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+        }
+        .tab-button {
+            transition: all 0.3s ease;
+        }
+        .tab-button.active {
+            color: #4f46e5; /* indigo-600 */
+            border-color: #4f46e5;
+            background-color: #eef2ff; /* indigo-50 */
+        }
+        .tab-content {
+            display: none;
+        }
+        .tab-content.active {
+            display: block;
+            animation: fadeIn 0.5s ease-in-out;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+    </style>
+</head>
+<body class="bg-gray-100 text-gray-800">
+
+    <!-- Navbar -->
+    <nav class="bg-white/80 backdrop-blur-md sticky top-0 z-50 shadow-sm">
+        <div class="max-w-7xl mx-auto px-4 py-3 flex justify-between items-center">
+            <h1 class="text-2xl font-bold text-indigo-600">Anshul Jain</h1>
+            <div class="flex items-center space-x-5">
+                <a href="https://www.linkedin.com/in/anshuljain7/" target="_blank" class="text-2xl text-gray-500 hover:text-indigo-600 transition-colors"><i class="fab fa-linkedin"></i></a>
+                <a href="https://www.udemy.com/user/anshul-jain-50/" target="_blank" class="text-2xl text-gray-500 hover:text-indigo-600 transition-colors"><i class="fa-solid fa-graduation-cap"></i></a>
+                <a href="#contact" class="hidden md:inline-block bg-indigo-600 text-white py-2 px-5 rounded-full btn hover:bg-indigo-700">Contact Me</a>
+            </div>
+        </div>
+    </nav>
+
+    <main class="max-w-7xl mx-auto px-4 py-12">
+
+        <!-- Hero / About Me Section -->
+        <section id="about" class="mb-16">
+            <div class="flex flex-col md:flex-row items-center gap-10">
+                <div class="w-48 h-48 md:w-56 md:h-56 rounded-full overflow-hidden shadow-lg flex-shrink-0">
+                    <img src="https://i.ibb.co/6r1F4Wq/profile-pic.jpg" alt="Profile Picture of Anshul Jain" class="w-full h-full object-cover">
+                </div>
+                <div class="text-center md:text-left">
+                    <h2 class="text-4xl font-bold text-gray-800">Experienced Product Development Lead</h2>
+                    <p class="mt-4 text-lg text-gray-600">
+                        As an Experienced Product Development Lead with a demonstrated history in IT, I specialize in Software Architecture, GenAI applications (RAG & AI Agents), and Big Data solutions. My passion is to continuously learn and leverage technology like AI and cloud computing to design elegant, powerful solutions for complex problems in the Telecom, Insurance, and Financial domains.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Main Content Grid -->
+        <div class="grid grid-cols-1 lg:grid-cols-3 gap-12">
+            
+            <!-- Left Column: Key Skills & Interests -->
+            <div class="lg:col-span-1 space-y-8">
+                <div class="bg-white rounded-lg shadow-md p-6 card">
+                    <h3 class="text-xl font-bold text-indigo-600 mb-4 text-center">Core Competencies</h3>
+                    <ul class="space-y-3 text-gray-700">
+                        <li class="flex items-start"><i class="fa-solid fa-star text-indigo-500 mt-1 mr-3"></i><span><strong>Software & Solution Architecture:</strong> Designing robust and scalable systems.</span></li>
+                        <li class="flex items-start"><i class="fa-solid fa-star text-indigo-500 mt-1 mr-3"></i><span><strong>GenAI & Big Data:</strong> Expertise in RAG, AI Agents, Spark, Hadoop & Hive.</span></li>
+                        <li class="flex items-start"><i class="fa-solid fa-star text-indigo-500 mt-1 mr-3"></i><span><strong>Core Programming:</strong> Proficient in Core Java and database management (SQL).</span></li>
+                        <li class="flex items-start"><i class="fa-solid fa-star text-indigo-500 mt-1 mr-3"></i><span><strong>Methodologies:</strong> Experienced in both Agile and Waterfall development.</span></li>
+                    </ul>
+                </div>
+                <div class="bg-white rounded-lg shadow-md p-6 card">
+                    <h3 class="text-xl font-bold text-indigo-600 mb-4 text-center">Key Qualities</h3>
+                     <ul class="space-y-3 text-gray-700">
+                        <li class="flex items-center"><i class="fa-solid fa-check-circle text-indigo-500 mr-3"></i><span>Strong Analytical & Interpersonal Skills</span></li>
+                        <li class="flex items-center"><i class="fa-solid fa-check-circle text-indigo-500 mr-3"></i><span>Excellent Team Player & Fast Learner</span></li>
+                        <li class="flex items-center"><i class="fa-solid fa-check-circle text-indigo-500 mr-3"></i><span>Passionate about New Technology</span></li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Right Column: Projects & Experience Tabs -->
+            <div class="lg:col-span-2 bg-white rounded-lg shadow-md p-6 card">
+                <div class="flex justify-center mb-6 border-b border-gray-200">
+                    <button class="tab-button active flex-1 text-center font-semibold py-2 border-b-2" onclick="openTab(event, 'projects')">Projects</button>
+                    <button class="tab-button flex-1 text-center font-semibold py-2 border-b-2 border-transparent" onclick="openTab(event, 'experience')">Experience</button>
+                </div>
+
+                <!-- Projects Tab -->
+                <div id="projects" class="tab-content active space-y-4">
+                    <div class="p-4 bg-gray-50 rounded-lg hover:bg-indigo-50 transition">
+                        <h4 class="font-bold text-gray-800">Generic RAG Accelerator Framework</h4>
+                        <p class="text-sm text-gray-600">High-throughput framework using Python/LlamaIndex for building personalized chatbots.</p>
+                    </div>
+                    <div class="p-4 bg-gray-50 rounded-lg hover:bg-indigo-50 transition">
+                        <h4 class="font-bold text-gray-800">Strategic Financial Data Platform (for Bank of America)</h4>
+                        <p class="text-sm text-gray-600">Data ingestion app with configurable pipelines and zero-downtime deployments.</p>
+                    </div>
+                    <div class="p-4 bg-gray-50 rounded-lg hover:bg-indigo-50 transition">
+                        <h4 class="font-bold text-gray-800">FDW Data Warehouse</h4>
+                        <p class="text-sm text-gray-600">Scalable data warehouse using Apache Carbon/Spark for high-performance querying.</p>
+                    </div>
+                    <div class="p-4 bg-gray-50 rounded-lg hover:bg-indigo-50 transition">
+                        <h4 class="font-bold text-gray-800">Sentiment Analysis REST Service (for AAA)</h4>
+                        <p class="text-sm text-gray-600">Java Spring Boot app to analyze sentiment from customer call transcripts.</p>
+                    </div>
+                </div>
+
+                <!-- Experience Tab -->
+                <div id="experience" class="tab-content space-y-4">
+                    <div class="p-4 bg-gray-50 rounded-lg hover:bg-indigo-50 transition">
+                        <p class="text-xs text-gray-500">May 2024 - Present</p>
+                        <h4 class="font-bold text-gray-800">Gen AI Solution Lead @ Impetus Technologies</h4>
+                    </div>
+                    <div class="p-4 bg-gray-50 rounded-lg hover:bg-indigo-50 transition">
+                        <p class="text-xs text-gray-500">Mar 2019 - Sep 2024</p>
+                        <h4 class="font-bold text-gray-800">Java & Big Data Lead @ Impetus Technologies</h4>
+                    </div>
+                    <div class="p-4 bg-gray-50 rounded-lg hover:bg-indigo-50 transition">
+                        <p class="text-xs text-gray-500">Feb 2018 – Feb 2019</p>
+                        <h4 class="font-bold text-gray-800">Developer @ Saama Technologies</h4>
+                    </div>
+                    <div class="p-4 bg-gray-50 rounded-lg hover:bg-indigo-50 transition">
+                        <p class="text-xs text-gray-500">Feb 2016 – Feb 2018</p>
+                        <h4 class="font-bold text-gray-800">Developer @ Harman (A Samsung Company)</h4>
+                    </div>
+                    <div class="p-4 bg-gray-50 rounded-lg hover:bg-indigo-50 transition">
+                        <p class="text-xs text-gray-500">2012 - 2016</p>
+                        <h4 class="font-bold text-gray-800">Developer @ Amdocs & Co-Founder @ Growfitter</h4>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Contact Section -->
+        <section id="contact" class="mt-20">
+            <div class="max-w-2xl mx-auto bg-white rounded-lg shadow-md p-8 card">
+                <h2 class="text-3xl font-bold text-gray-800 text-center mb-2">Get in Touch</h2>
+                <p class="text-gray-600 text-center mb-8">Have a question or want to collaborate? Send me a message!</p>
+                <form action="mailto:ajr.jain7@gmail.com" method="POST" enctype="text/plain" class="space-y-6">
+                    <button type="submit" class="w-full bg-indigo-600 text-white py-3 rounded-full btn hover:bg-indigo-700 font-semibold text-lg">
+                        <i class="fas fa-envelope mr-2"></i> Contact via Email
+                    </button>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white mt-16">
+        <div class="max-w-7xl mx-auto py-6 px-4 text-center">
+            <p>© 2025 Anshul Jain. All Rights Reserved.</p>
+            <p class="text-sm text-gray-400 mt-1">Striving for excellence as a premier Software Solution Architect.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Tab functionality
+        function openTab(evt, tabName) {
+            let i, tabcontent, tabbuttons;
+            tabcontent = document.getElementsByClassName("tab-content");
+            for (i = 0; i < tabcontent.length; i++) {
+                tabcontent[i].classList.remove('active');
+            }
+            tabbuttons = document.getElementsByClassName("tab-button");
+            for (i = 0; i < tabbuttons.length; i++) {
+                tabbuttons[i].classList.remove('active');
+            }
+            document.getElementById(tabName).classList.add('active');
+            evt.currentTarget.classList.add('active');
+        }
+    </script>
+</body>
+</html>
